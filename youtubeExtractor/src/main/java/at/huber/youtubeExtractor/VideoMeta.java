@@ -17,6 +17,8 @@ public class VideoMeta {
     private final long viewCount;
 
     private final boolean isLiveStream;
+    private String hlsManifestUrl;
+    private String dashManifestUrl;
 
     protected VideoMeta(String videoId, String title, String author, String channelId,
                         long videoLength, long viewCount, boolean isLiveStream, String shortDescript) {
@@ -28,6 +30,14 @@ public class VideoMeta {
         this.viewCount = viewCount;
         this.isLiveStream = isLiveStream;
         this.shortDescript = shortDescript;
+    }
+
+    public void setHlsManifestUrl(String hlsManifestUrl) {
+        this.hlsManifestUrl = hlsManifestUrl;
+    }
+
+    public void setDashManifestUrl(String dashManifestUrl) {
+        this.dashManifestUrl = dashManifestUrl;
     }
 
     // 120 x 90
@@ -73,6 +83,14 @@ public class VideoMeta {
 
     public boolean isLiveStream() {
         return isLiveStream;
+    }
+
+    public String getDashManifestUrl() {
+        return dashManifestUrl;
+    }
+
+    public String getHlsManifestUrl() {
+        return hlsManifestUrl;
     }
 
     /**

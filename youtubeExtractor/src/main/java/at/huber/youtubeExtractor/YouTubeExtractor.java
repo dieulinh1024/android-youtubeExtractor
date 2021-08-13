@@ -279,6 +279,13 @@ public abstract class YouTubeExtractor extends AsyncTask<String, Void, SparseArr
                     videoDetails.getBoolean("isLiveContent"),
                     videoDetails.getString("shortDescription"));
 
+            if (streamingData.has("hlsManifestUrl")) {
+                this.videoMeta.setHlsManifestUrl(streamingData.getString("hlsManifestUrl"));
+            }
+            if (streamingData.has("dashManifestUrl")) {
+                this.videoMeta.setDashManifestUrl(streamingData.getString("dashManifestUrl"));
+            }
+
         } else {
             Log.d(LOG_TAG, "ytPlayerResponse was not found");
         }
